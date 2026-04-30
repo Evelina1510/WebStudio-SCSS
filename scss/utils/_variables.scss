@@ -1,12 +1,11 @@
-$font-family: "Roboto", sans-serif;
-$font-family: "Raleway", sans-serif;
-
-$bg-header--text: #ffffff;
-$text-hover-logo: #2196f3;
-$text-main: #212121;
-$text-p: #757575;
-$bg-hero: #2f303a;
-$team-bg: #f5f4fa;
-$bg-footer: #2f303a;
-$text-footer: #ffffff;
-$btn-bg: #2196f3;
+:root {
+  --bg-header--text: #ffffff;
+  --text-hover-logo: #2196f3;
+  --text-main: #212121;
+  --text-p: #757575;
+  --bg-hero: #2f303a;
+  --team-bg: #f5f4fa;
+  --bg-footer: #2f303a;
+  --text-footer: #ffffff;
+  --btn-bg: #2196f3;
+}
