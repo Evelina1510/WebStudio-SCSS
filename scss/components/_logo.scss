@@ -1,10 +1,10 @@
 .logo-blue {
-  color: var(--text-hover-logo);
+  color: $btn-bg;
 }
 .logo-white {
-  color: var(--text-footer);
+  color: $text-footer;
 }
 
-.logo {
+.header__logo {
   animation: fadeInUp 1s ease;
 }

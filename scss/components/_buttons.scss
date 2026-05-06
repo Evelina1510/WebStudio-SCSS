@@ -5,8 +5,8 @@ button.btn {
   letter-spacing: 0.96px;
   line-height: 30px;
   text-align: center;
-  background-color: var(--btn-bg);
-  color: var(--bg-header--text);
+  background-color: $btn-bg;
+  color: $bg-header-text;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;

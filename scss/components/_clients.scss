@@ -1,46 +1,50 @@
-.clients-icon {
-  width: 106px;
-  height: 60px;
-}
-
-.clients-icon:hover {
-  animation: heartBeat 1s linear;
-}
-
-.clients-item {
-  border: 1px solid #afb1b8;
-  padding: 16px 32px;
-  border-radius: 4px;
-  fill: #afb1b8;
-  width: 170px;
-  height: 92px;
-   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.clients-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-.clients-item:hover {
-  border: 1px solid #2196f3;
-  fill: #2196f3;
-}
-
 .clients {
-  padding-top: 82px;
-  padding-left: 215px;
-  padding-right: 215px;
-  padding-bottom: 94px;
-}
+  padding: 82px 215px 94px;
 
-.clients-title {
-  font-weight: 700;
-  size: 36px;
-  letter-spacing: 3%;
-  padding-bottom: 50px;
-  text-align: center;
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 50px;
+    letter-spacing: 0.03em;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__item {
+    width: 170px;
+    height: 92px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $clients-item;
+    border-radius: 4px;
+
+    fill: $clients-item;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      border: 1px solid $btn-bg;
+      fill: $btn-bg;
+    }
+  }
+
+  &__icon {
+    width: 106px;
+    height: 60px;
+    transition: transform 250ms linear;
+
+    &:hover {
+      animation: heartBeat 1s linear;
+    }
+  }
 }

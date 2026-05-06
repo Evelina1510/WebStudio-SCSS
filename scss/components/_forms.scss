@@ -1,10 +1,10 @@
-.input-wrap {
+.modal__input-wrap {
   position: relative;
   margin-bottom: 10px;
 }
 
-.form-input-text {
-  color: #757575;
+.modal__label {
+  color: $text-p;
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -14,10 +14,10 @@
   margin-bottom: 4px;
 }
 
-.form-input {
+.modal__input {
   padding-left: 40px;
 }
-.form-svg {
+.modal__icon {
   position: absolute;
   left: 12px;
   transform: translateY(50%);
@@ -28,8 +28,8 @@
   margin: 30px auto 40px;
 }
 
-.form-input,
-.form-textarea {
+.modal__input,
+.modal__textarea {
   width: 448px;
   height: 40px;
   padding: 11px;
@@ -37,21 +37,17 @@
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
 
-.form-input:focus {
-  border: 1px solid var(--btn-bg);
+.modal__input:focus,
+.modal__textarea:focus {
+  border: 1px solid $btn-bg;
   outline: none;
 }
 
-.form-textarea:focus {
-  border: 1px solid var(--btn-bg);
-  outline: none;
+.modal__input-wrap:focus-within .modal__icon {
+  fill: $btn-bg;
 }
 
-.input-wrap:focus-within .form-svg {
-  fill: var(--btn-bg);
-}
-
-.form-textarea {
+.modal__textarea {
   height: 120px;
   margin-bottom: 20px;
   font-weight: 400;
@@ -60,10 +56,10 @@
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-checkbox {
-  color: var(--text-p);
+.modal__checkbox {
+  color: $text-p;
 }
 
-.form-checkbox a {
-  color: var(--btn-bg);
+.modal__checkbox a {
+  color: $btn-bg;
 }

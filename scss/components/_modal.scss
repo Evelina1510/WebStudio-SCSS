@@ -32,7 +32,7 @@
   max-width: 528px;
   max-height: 581px;
   padding: 40px 40px;
-  background-color: var(--bg-header--text);
+  background-color: $bg-header-text;
   transform: translate(-50%, -50%);
   border-radius: 4px;
   box-shadow:
@@ -46,19 +46,19 @@
   opacity: 1;
 }
 
-.modal-close {
+.modal__close {
   position: absolute;
   top: 15px;
   right: 15px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.modal-close:hover {
-  color: var(--btn-bg);
+.modal__close:hover {
+  color: $btn-bg;
 }
 
-.modal-text {
-  color: #212121;
+.modal__text {
+  color: $text-main;
   text-align: center;
   font-family: Roboto;
   font-size: 20px;
