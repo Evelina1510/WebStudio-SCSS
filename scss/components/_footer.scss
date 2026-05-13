@@ -3,8 +3,7 @@
   padding: 60px 0;
 
   .container {
-    display: flex;
-    align-items: flex-start;
+    @include flex(flex, flex-start, flex-start);
     gap: 70px;
   }
 
@@ -13,11 +12,7 @@
   }
 
   &__logo {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    letter-spacing: 0.8px;
-    text-decoration: none;
+    @extend %logo-style;
     color: $text-hover-logo;
   }
 
@@ -53,20 +48,11 @@
   }
 
   &__social {
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
+    @extend %social-icon;
+    @include transition;
+    @include flex;
     background: rgba(255, 255, 255, 0.1);
-
-    transition: background-color 250ms ease;
-
     fill: $text-footer;
-
     &:hover {
       background-color: $btn-bg;
     }
@@ -87,8 +73,7 @@
   }
 
   &__join {
-    display: flex;
-    align-items: center;
+    @include flex(flex, flex-start, center);
     gap: 12px;
   }
 
@@ -106,21 +91,17 @@
   }
 
   &__button {
-    display: flex;
-    align-items: center;
+    @include flex(flex, flex-start, center);
 
     margin-left: 12px;
     padding: 10px 28px;
-
     background-color: $btn-bg;
     border: none;
     border-radius: 4px;
-
     font-weight: 700;
     font-size: 16px;
     color: $text-footer;
-
-    transition: background-color 250ms ease;
+    @include transition(background-color);
 
     &:hover {
       background-color: darken($btn-bg, 5%);

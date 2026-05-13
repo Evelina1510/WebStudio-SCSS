@@ -2,8 +2,7 @@
   padding-top: 94px;
 
   &__list {
-    display: flex;
-    justify-content: space-between;
+    @include flex(flex, space-between, flex-start);
     gap: 30px;
   }
 

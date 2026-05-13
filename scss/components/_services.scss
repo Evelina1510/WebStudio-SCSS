@@ -2,45 +2,32 @@
   padding: 94px 0;
 
   &__list {
-    display: flex;
-    justify-content: center;
+    @include flex;
     gap: 30px;
   }
 
   &__item {
-    position: relative;
+    @include position(relative);
   }
 
   &__title {
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 36px;
-    letter-spacing: 1.08px;
-    text-align: center;
-    color: $text-main;
+    @include section-title;
   }
-
   &__text {
-    position: absolute;
+    @include position(absolute);
     bottom: 0;
     left: 0;
-
     width: 100%;
     height: 70px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    @include flex;
     background: rgba(47, 48, 58, 0.8);
-
     font-family: "Roboto";
     font-weight: 700;
     font-size: 14px;
     line-height: 1;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-
     color: $bg-header-text;
   }
 }

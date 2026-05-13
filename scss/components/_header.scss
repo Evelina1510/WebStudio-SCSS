@@ -2,25 +2,23 @@
   border-bottom: 1px solid #d9d9d9;
 
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(flex, space-between, center);
   }
 
   &__icons {
     width: 16px;
     height: 12px;
     fill: $text-p;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition(fill);
   }
 
   &__menu {
-    display: flex;
+    @include flex(flex);
     gap: 50px;
   }
 
   &__contacts-list {
-    display: flex;
+    @include flex(flex);
     gap: 50px;
   }
 
@@ -29,23 +27,19 @@
   }
 
   &__logo {
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 26px;
-    letter-spacing: 0.8px;
+    @extend %logo-style;
     color: $text-main;
     padding: 25px 0;
-    text-decoration: none;
   }
 
   &__link {
-    position: relative;
+    @include position(relative);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.28px;
     color: $text-main;
-    transition: color 250ms ease;
+    @include transition(color);
 
     &:hover {
       color: $btn-bg;
@@ -57,12 +51,12 @@
       height: 4px;
       bottom: -32px;
       left: 0;
-      position: absolute;
+      @include position(absolute);
       border-radius: 2px;
       background-color: $btn-bg;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 250ms ease;
+      @include transition(transform);
     }
 
     &:hover::after {
@@ -71,14 +65,14 @@
   }
 
   &__link--active {
-    position: relative;
+    @include position(relative);
   }
 
   &__contact {
     display: inline-block;
     text-decoration: none;
     color: $text-p;
-    transition: color 250ms ease;
+    @include transition(color);
 
     &:hover {
       color: $btn-bg;

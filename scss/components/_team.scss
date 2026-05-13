@@ -4,16 +4,11 @@
 
   &__title {
     margin-bottom: 50px;
-    font-weight: 700;
-    font-size: 36px;
-    letter-spacing: 1.08px;
-    text-align: center;
-    color: $text-main;
+    @include section-title;
   }
 
   &__list {
-    display: flex;
-    justify-content: space-between;
+    @include flex(flex, space-between);
     gap: 30px;
   }
 
@@ -52,21 +47,15 @@
   }
 
   &__icons {
-    display: flex;
-    justify-content: center;
+    @include flex;
     gap: 10px;
     margin-top: 16px;
     fill: $clients-item;
   }
 
   &__social {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @extend %social-icon;
+    @include transition;
 
     &:hover {
       background-color: $btn-bg;
@@ -80,6 +69,6 @@
   &__icon {
     width: 20px;
     height: 20px;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition;
   }
 }
