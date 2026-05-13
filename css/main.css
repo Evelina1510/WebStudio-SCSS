@@ -96,9 +96,6 @@ button.btn, .btn, .portfolio__filters-btn {
 .header__link:hover::after, .header__link--active::after {
   transform: scaleX(1);
 }
-.header__link--active {
-  transform: scaleX(1);
-}
 .header__contact {
   display: inline-block;
   text-decoration: none;
