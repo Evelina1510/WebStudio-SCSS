@@ -5,35 +5,22 @@
     @include flex(flex, space-between, center);
   }
 
-  &__icons {
-    width: 16px;
-    height: 12px;
-    fill: $text-p;
-    @include transition(fill);
+  &__logo {
+    @extend %logo-style;
+    color: $text-main;
+    padding: 24px 0;
   }
 
   &__menu {
     @include flex(flex);
     gap: 50px;
-  }
-
-  &__contacts-list {
-    @include flex(flex);
-    gap: 50px;
-  }
-
-  &__contacts {
-    font-style: normal;
-  }
-
-  &__logo {
-    @extend %logo-style;
-    color: $text-main;
-    padding: 25px 0;
+    align-items: center;
   }
 
   &__link {
     position: relative;
+    display: block;
+    padding: 32px 0;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -41,7 +28,8 @@
     color: $text-main;
     @include transition(color);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $btn-bg;
     }
 
@@ -49,7 +37,7 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -32px;
+      bottom: 0;
       width: 100%;
       height: 4px;
       border-radius: 2px;
@@ -65,22 +53,37 @@
     }
   }
 
-  &__link--active {
-    transform: scaleX(1);
+  &__contacts {
+    font-style: normal;
+  }
+
+  &__contacts-list {
+    @include flex(flex);
+    gap: 50px;
   }
 
   &__contact {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
     color: $text-p;
     @include transition(color);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $btn-bg;
 
       .header__icons {
         fill: $btn-bg;
       }
     }
+  }
+
+  &__icons {
+    width: 16px;
+    height: 12px;
+    fill: $text-p;
+    @include transition(fill);
   }
 }
