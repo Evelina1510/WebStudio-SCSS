@@ -15,7 +15,7 @@
   &__menu {
     @include flex(flex);
     gap: 50px;
-    align-items: center;
+     align-items: center;
   }
 
   &__contacts-list {
@@ -52,7 +52,7 @@
       content: "";
       position: absolute;
       left: 0;
-      bottom: -32px;
+      bottom: 0;
       width: 100%;
       height: 4px;
       border-radius: 2px;
