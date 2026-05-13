@@ -32,37 +32,38 @@
     padding: 25px 0;
   }
 
-  &__link {
-    @include position(relative);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.28px;
-    color: $text-main;
-    @include transition(color);
+ &__link {
+  position: relative;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.28px;
+  color: $text-main;
+  @include transition(color);
 
-    &:hover {
-      color: $btn-bg;
-    }
-
-    &::after {
-      content: "";
-      width: 100%;
-      height: 4px;
-      bottom: -32px;
-      left: 0;
-      @include position(absolute);
-      border-radius: 2px;
-      background-color: $btn-bg;
-      transform: scaleX(0);
-      transform-origin: left;
-      @include transition(transform);
-    }
-
-    &:hover::after {
-      transform: scaleX(1);
-    }
+  &:hover {
+    color: $btn-bg;
   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $btn-bg;
+    transform: scaleX(0);
+    transform-origin: left;
+    @include transition(transform);
+  }
+
+  &:hover::after,
+  &--active::after {
+    transform: scaleX(1);
+  }
+}
 
   &__link--active {
     @include position(relative);

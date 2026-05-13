@@ -1,11 +1,12 @@
-@mixin flex($display:flex, $justify:center, $align:center) {
+@mixin flex($display:flex, $justify:center, $align:center, $gap:0) {
     display: $display;
     justify-content: $justify;
     align-items: $align;
+    gap: $gap;
 }
 
-@mixin transition($duration: 250ms, $timing: cubic-bezier(0.4, 0, 0.2, 1)) {
-    transition: $duration $timing;
+@mixin transition($property: all, $duration: 250ms, $timing: cubic-bezier(0.4, 0, 0.2, 1)) {
+    transition: $property $duration $timing;
 }
 
 @mixin bordered($border:1px solid #afb1b8, $radius:4px) {
