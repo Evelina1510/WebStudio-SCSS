@@ -203,7 +203,8 @@
     }
 
     &__contacts-list {
-      flex-direction: row;
+      flex-direction: column;
+      align-items: flex-start;
       gap: 10px;
     }
 
@@ -245,5 +246,15 @@
 @media screen and (max-width: 767px) {
   body:has(.header__menu-toggle:checked) {
     overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    &__contacts-list {
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
   }
 }
