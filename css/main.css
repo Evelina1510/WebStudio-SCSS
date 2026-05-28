@@ -54,6 +54,9 @@ img {
   .container {
     max-width: 1200px;
   }
+  .container__contacts-list {
+    flex-direction: row;
+  }
 }
 
 .header {
