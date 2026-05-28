@@ -1,8 +1,66 @@
 .header {
+  position: relative;
   border-bottom: 1px solid #d9d9d9;
 
   &__container {
     @include flex(flex, space-between, center);
+    padding: 16px 0;
+  }
+
+  &__logo {
+    @extend %logo-style;
+    color: $text-main;
+    font-size: 20px;
+    padding: 0;
+  }
+
+  &__menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__menu-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  &__menu-icon {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $text-main;
+    @include transition;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 2px;
+      background-color: $text-main;
+      @include transition;
+    }
+
+    &::before {
+      top: -8px;
+    }
+
+    &::after {
+      top: 8px;
+    }
   }
 
   &__icons {
@@ -12,65 +70,54 @@
     @include transition(fill);
   }
 
-  &__menu {
-    @include flex(flex);
-    gap: 50px;
-     align-items: center;
+  &__menu-list {
+    @include flex(flex, center, center);
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 32px;
   }
 
   &__contacts-list {
-    @include flex(flex);
-    gap: 50px;
+    @include flex(flex, center, center);
+    flex-direction: column;
+    gap: 24px;
   }
 
   &__contacts {
     font-style: normal;
   }
 
-  &__logo {
-    @extend %logo-style;
-    color: $text-main;
-    padding: 25px 0;
-  }
-
   &__link {
     position: relative;
     display: block;
-    padding: 32px 0;
+    padding: 0;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 40px;
     font-weight: 500;
-    letter-spacing: 0.28px;
+    letter-spacing: 0.02em;
+    line-height: 1.175;
     color: $text-main;
     @include transition(color);
 
-    &:hover {
+    &:hover,
+    &--active {
       color: $btn-bg;
     }
 
     &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
-      background-color: $btn-bg;
-      transform: scaleX(0);
-      transform-origin: left;
-      @include transition(transform);
-    }
-
-    &:hover::after,
-    &--active::after {
-      transform: scaleX(1);
+      display: none;
     }
   }
 
   &__contact {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.16;
     color: $text-p;
     @include transition(color);
 
@@ -81,5 +128,122 @@
         fill: $btn-bg;
       }
     }
+  }
+
+  @media screen and (max-width: 767px) {
+    &__menu-toggle:checked + &__menu-btn &__menu-icon {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &__menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      padding: 40px;
+      background-color: $bg-header-text;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    &__menu-toggle:checked ~ &__menu {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    &__logo {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &__container {
+      padding: 0;
+    }
+
+    &__logo {
+      padding: 25px 0;
+      font-size: 26px;
+    }
+
+    &__menu-toggle,
+    &__menu-btn {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+      position: static;
+      align-items: center;
+      gap: 50px;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    &__menu-list {
+      flex-direction: row;
+      gap: 50px;
+      margin-bottom: 0;
+    }
+
+    &__contacts-list {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__link {
+      padding: 32px 0;
+      font-size: 14px;
+      letter-spacing: 0.28px;
+      line-height: normal;
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: $btn-bg;
+        transform: scaleX(0);
+        transform-origin: left;
+        @include transition(transform);
+      }
+
+      &:hover::after,
+      &--active::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &__contact {
+      font-size: 14px;
+      letter-spacing: 0.28px;
+      line-height: normal;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body:has(.header__menu-toggle:checked) {
+    overflow: hidden;
   }
 }

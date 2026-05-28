@@ -1,19 +1,29 @@
 .services {
-  padding: 94px 0;
+  display: none;
+  padding: 60px 0;
 
   &__list {
-    @include flex;
+    @include flex(flex, center, center);
+    flex-direction: column;
     gap: 30px;
   }
 
   &__item {
     @include position(relative);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
   }
 
   &__title {
-    margin-bottom: 50px;
-    @include section-title;
+    margin-bottom: 30px;
+    @include section-title(28px, 0.84px);
   }
+
   &__text {
     @include position(absolute);
     bottom: 0;
@@ -29,5 +39,26 @@
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: $bg-header-text;
+  }
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+    padding: 94px 0;
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
+    &__item {
+      flex-basis: auto;
+      max-width: 370px;
+    }
+
+    &__title {
+      margin-bottom: 50px;
+      @include section-title;
+    }
   }
 }

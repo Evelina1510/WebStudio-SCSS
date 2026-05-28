@@ -1,11 +1,19 @@
 .footer {
   background-color: $bg-footer;
   padding: 60px 0;
+  width: 100%;
 
   .container {
-    @include flex(flex, center, flex-start);
-    gap: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
     flex-direction: column;
+    width: 100%;
+  }
+
+  &__contacts {
+    text-align: center;
   }
 
   &__logo-wrap {
@@ -61,6 +69,7 @@
     @include flex;
     background: rgba(255, 255, 255, 0.1);
     fill: $text-footer;
+
     &:hover {
       background-color: $btn-bg;
     }
@@ -69,6 +78,13 @@
   &__icon-svg {
     width: 20px;
     height: 20px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__form-title {
@@ -90,7 +106,7 @@
 
   &__input {
     width: 100%;
-    max-width: 358px;
+    max-width: 450px;
     padding: 15px;
     border-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -101,7 +117,6 @@
 
   &__button {
     @include flex(flex, center, center);
-    margin-left: 0;
     padding: 10px 28px;
     background-color: $btn-bg;
     border: none;
@@ -110,8 +125,7 @@
     font-size: 16px;
     color: $text-footer;
     @include transition(background-color);
-    width: 100%;
-    max-width: 200px;
+    width: 200px;
 
     &:hover {
       background-color: darken($btn-bg, 5%);
@@ -124,34 +138,41 @@
     fill: $bg-header-text;
     margin-left: 10px;
   }
-}
 
-// Tablet: adjust footer layout
-@media (min-width: 768px) {
-  .footer {
+  @media screen and (min-width: 768px) {
     padding: 80px 0;
 
     .container {
-      flex-direction: row;
-      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
       gap: 50px;
     }
 
+    &__join {
+      flex-direction: column;
+    }
+
+    &__form-title,
+    &__title,
+    &__item,
     &__logo-wrap {
-      text-align: left;
-      width: auto;
-    }
-
-    &__item {
-      text-align: left;
-    }
-
-    &__title {
-      text-align: left;
+      text-align: center;
     }
 
     &__icons {
-      justify-content: flex-start;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .container {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &__form {
+      align-items: flex-start;
     }
 
     &__form-title {
@@ -160,30 +181,6 @@
 
     &__join {
       flex-direction: row;
-      width: auto;
-    }
-
-    &__input {
-      width: 300px;
-    }
-
-    &__button {
-      width: auto;
-      max-width: none;
-      margin-left: 12px;
-    }
-  }
-}
-
-// Desktop: full layout
-@media (min-width: 1200px) {
-  .footer {
-    .container {
-      justify-content: flex-start;
-    }
-
-    &__logo {
-      font-size: 26px;
     }
 
     &__input {

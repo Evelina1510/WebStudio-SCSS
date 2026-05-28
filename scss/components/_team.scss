@@ -1,20 +1,22 @@
 .team {
   background-color: $team-bg;
-  padding: 94px 0;
+  padding: 60px 0;
 
   &__title {
-    margin-bottom: 50px;
-    @include section-title;
+    margin-bottom: 30px;
+    @include section-title(28px, 0.84px);
   }
 
   &__list {
-    @include flex(flex, space-between);
+    @include flex(flex, center, center);
+    flex-direction: column;
     gap: 30px;
   }
 
   &__item {
-    width: 270px;
-    height: 428px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 0 0 4px 4px;
     background: $text-footer;
     box-shadow:
@@ -24,8 +26,8 @@
   }
 
   &__img {
-    width: 270px;
-    height: 260px;
+    width: 100%;
+    height: auto;
     margin-bottom: 30px;
   }
 
@@ -44,12 +46,14 @@
     letter-spacing: 0.48px;
     text-align: center;
     color: $text-p;
+    padding-bottom: 24px;
   }
 
   &__icons {
     @include flex;
     gap: 10px;
     margin-top: 16px;
+    margin-bottom: 24px;
     fill: $clients-item;
   }
 
@@ -70,5 +74,50 @@
     width: 20px;
     height: 20px;
     @include transition;
+  }
+
+  @media screen and (min-width: 480px) {
+    &__title {
+      @include section-title(32px, 0.96px);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 94px 0;
+
+    &__title {
+      margin-bottom: 50px;
+      @include section-title;
+    }
+
+    &__list {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &__item {
+      flex-basis: calc(50% - 15px);
+      max-width: calc(50% - 15px);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    &__list {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    &__item {
+      width: 270px;
+      max-width: 270px;
+      height: 428px;
+      flex-basis: auto;
+    }
+
+    &__img {
+      width: 270px;
+      height: 260px;
+    }
   }
 }

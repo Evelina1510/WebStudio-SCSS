@@ -1,5 +1,5 @@
 .clients {
-  padding: 82px 215px 94px;
+  padding: 82px 15px 94px;
 
   &__title {
     @include section-title;
@@ -8,12 +8,15 @@
   }
 
   &__list {
-    @include flex;
-    gap: 30px;
+    @include flex(flex, center, center);
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
   }
 
   &__item {
-    width: 170px;
+    width: 100%;
+    max-width: 170px;
     height: 92px;
 
     @include flex;
@@ -39,5 +42,17 @@
     &:hover {
       animation: heartBeat 1s linear;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .clients {
+    padding: 82px 40px 94px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .clients {
+    padding: 82px 215px 94px;
   }
 }

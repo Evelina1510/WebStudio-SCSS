@@ -1,13 +1,17 @@
 button.btn {
   @extend %button-style;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.96px;
-  line-height: 30px;
-  text-align: center;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
   background-color: $btn-bg;
   color: $bg-header-text;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  padding: 10px 32px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 12px 24px;
+  width: auto;
 }

@@ -1,19 +1,21 @@
 .hero {
   background-color: $bg-hero;
-  padding: 200px 0 280px;
+  padding: 118px 0 138px;
   background-image:
     linear-gradient(#2f303a66, #2f303a66), url("../img/work.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 
   &__title {
-    margin: 0 auto 30px;
-    width: 696px;
-    height: 120px;
+    margin: 0 auto 24px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     line-height: 1.4;
     font-weight: 900;
-    font-size: 44px;
-    letter-spacing: 2.64px;
+    font-size: 26px;
+    letter-spacing: 1.56px;
     text-align: center;
     text-transform: uppercase;
     color: $bg-header-text;
@@ -22,5 +24,41 @@
   &__button {
     @include flex;
     border-radius: 4px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .hero {
+      padding: 148px 0 178px;
+    }
+
+    &__title {
+      max-width: 380px;
+      font-size: 36px;
+      letter-spacing: 2.16px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .hero {
+      padding: 200px 0 220px;
+    }
+
+    &__title {
+      max-width: 505px;
+      font-size: 44px;
+      letter-spacing: 2.64px;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .hero {
+      padding: 200px 0 280px;
+    }
+
+    &__title {
+      width: 696px;
+      max-width: 696px;
+    }
   }
 }
